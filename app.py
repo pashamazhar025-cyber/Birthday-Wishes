@@ -6,23 +6,6 @@ import time
 # ---------------- APP CONFIG ----------------
 st.set_page_config(page_title="Birthday App", layout="centered")
 
-# ---------------- BACKGROUND GIF AFTER COUNTDOWN ----------------
-def show_background_gif():
-    st.markdown(
-        """
-        <style>
-        .stApp {
-            background-image: url('https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
 # ---------------- ENTER NAME ----------------
 name = st.text_input("Enter your name:")
 
@@ -34,9 +17,37 @@ if name:
         time.sleep(1)
     countdown_placeholder.empty()  # remove countdown
 
-    # ---------------- PARTY GIF + HAPPY BIRTHDAY ----------------
-    show_background_gif()
+    # ---------------- PARTY BACKGROUND ----------------
+    st.markdown(
+        """
+        <style>
+        .stApp {
+            background-image: url('https://media.giphy.com/media/l0ExncehJzexFpRHq/giphy.gif'); /* Party animation */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+    # ---------------- BALLOONS ----------------
     st.balloons()
+
+    # ---------------- FIREWORKS OVERLAY ----------------
+    st.markdown(
+        """
+        <div style='position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none;'>
+            <img src='https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif' 
+            style='width:100%; height:100%; object-fit:cover;'/>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+    # ---------------- HAPPY BIRTHDAY MESSAGE ----------------
     st.markdown(f"""
     <h1 style='text-align:center; color:#FF4500; font-size:60px; font-weight:bold; 
                font-family: "Comic Sans MS", cursive, sans-serif; text-shadow: 2px 2px #FFD700;'>
@@ -97,6 +108,7 @@ May you grow in strength, kindness, and courage, and may your heart always remai
         # ---------------- FINAL GREETING ----------------
         st.markdown("""
 <h1 style='text-align:center; color:red; margin-top:40px;'>
-\U0001F54C Love You Molvi G \U0001F54C
+\U0001F54C Allah Hafiz\U0001F54C
 </h1>
 """, unsafe_allow_html=True)
+        
