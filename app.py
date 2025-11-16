@@ -70,10 +70,9 @@ if name:
                 st.write("----")
         else:
             st.warning("No videos found in the repository root.")
-
-    # ---------------- FINAL MESSAGE ----------------
-    st.markdown("""
-    <h1 style='text-align:center; color:red; margin-top:40px;'>
-    ❤️ MOLVI G, LOVE YOU ❤️
-    </h1>
-    """, unsafe_allow_html=True)
+       # ---------------- FINAL MESSAGE ----------------
+       st.markdown("""
+       <h1 style='text-align:center; color:red; margin-top:40px;'>
+       ❤️ MOLVI G, LOVE YOU ❤️
+       </h1>
+       """, unsafe_allow_html=True)
