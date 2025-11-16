@@ -19,7 +19,15 @@ if name:
         st.write(f"Starting in {i}…")
         time.sleep(1)
         st.empty()
-
+    # ---------------- BOLD COLORFUL HAPPY BIRTHDAY ----------------
+    st.markdown(f"""
+    <h1 style='text-align:center; color:#FF4500; font-size:60px; font-weight:bold; 
+               font-family: "Comic Sans MS", cursive, sans-serif; text-shadow: 2px 2px #FFD700;'>
+        Happy Birthday {name}!
+    </h1>
+    <br>
+    """, unsafe_allow_html=True)
+    
     # ---------------- BIRTHDAY MESSAGE ----------------
     st.markdown("""
 <div style='font-size:20px; text-align:center; margin-top:20px;'>
