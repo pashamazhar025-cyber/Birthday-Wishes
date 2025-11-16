@@ -12,7 +12,7 @@ st.markdown("""
     <h1 style='font-size:70px; font-weight:bold; color:#FF1493;
                font-family: "Comic Sans MS", cursive, sans-serif;
                text-shadow: 3px 3px #FFD700;'>
-        🎉 Welcome to the Birthday App! 🎉
+        🎉 Welcome Dear friend! 🎉
     </h1>
 </div>
 """, unsafe_allow_html=True)
@@ -24,10 +24,10 @@ name = st.text_input("Enter your name here:")
 if name:
     # ---------------- HAPPY BIRTHDAY MESSAGE ----------------
     st.markdown(f"""
-    <div style='text-align:center; margin-top:50px;'>
+    <div style='text-align:center; margin-top:60px;'>
         <h1 style='font-size:90px; font-weight:bold; color:#FF4500;
                    font-family: "Comic Sans MS", cursive, sans-serif;
-                   text-shadow: 4px 4px #FFD700;'>
+                   text-shadow: 10px 10px #FFD700;'>
             Happy Birthday Dear {name}!
         </h1>
     </div>
