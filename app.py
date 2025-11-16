@@ -27,12 +27,12 @@ if name:
         time.sleep(1)
     countdown_placeholder.empty()  # remove countdown
 
-    # ---------------- DARK PARTY BACKGROUND ----------------
+    # ---------------- HOME PARTY BACKGROUND ----------------
     st.markdown(
         """
         <style>
         .stApp {
-            background-image: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-image: url('https://images.unsplash.com/photo-1615874959471-7f1950c5f41b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGJpcnRoZGF5JTIwaG9tZXxlbnwwfHx8fDE2OTk2ODU0MzA&ixlib=rb-4.0.3&q=80&w=1080');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -98,18 +98,4 @@ May you grow in strength, kindness, and courage, and may your heart always remai
         # ---------- DISPLAY VIDEOS ----------
         video_files = [f for f in os.listdir('.') if f.lower().endswith((".mp4", ".mov", ".mkv"))]
         if video_files:
-            st.markdown("<h2 style='text-align:center; color:lightgreen;'>Your Videos</h2>", unsafe_allow_html=True)
-            for vid in video_files:
-                st.video(vid)
-                st.write("----")
-        else:
-            st.warning("No videos found in the repository root.")
-
-        # ---------------- FINAL GREETING ----------------
-        st.markdown("""
-<h1 style='text-align:center; color:red; margin-top:40px;'>
-\U0001F54C Murshid G, Assalam o Alaikum \U0001F54C
-</h1>
-""", unsafe_allow_html=True)
-            
-        
+            st.markdown("<h2 style='text-align:center
