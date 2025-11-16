@@ -71,6 +71,6 @@ May you grow in strength, kindness, and courage, and may your heart always remai
         # ---------------- FINAL GREETING MESSAGE ----------------
         st.markdown("""
 <h1 style='text-align:center; color:red; margin-top:40px;'>
-\U0001F54C Murshid G, Assalam o Alaikum \U0001F54C
+\U0001F54C Love You G \U0001F54C
 </h1>
 """, unsafe_allow_html=True)
