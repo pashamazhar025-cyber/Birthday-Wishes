@@ -98,4 +98,27 @@ May you grow in strength, kindness, and courage, and may your heart always remai
         # ---------- DISPLAY VIDEOS ----------
         video_files = [f for f in os.listdir('.') if f.lower().endswith((".mp4", ".mov", ".mkv"))]
         if video_files:
-            st.markdown("<h2 style='text-align:center
+            st.markdown("<h2 style='text-align:center; color:cyan;'>Your Pictures</h2>", unsafe_allow_html=True)
+            for img in image_files:
+                st.image(img, use_column_width=True)
+                st.write("----")
+        else:
+            st.warning("No images found in the repository root.")
+
+        # ---------- DISPLAY VIDEOS ----------
+        video_files = [f for f in os.listdir('.') if f.lower().endswith((".mp4", ".mov", ".mkv"))]
+        if video_files:
+            st.markdown("<h2 style='text-align:center; color:lightgreen;'>Your Videos</h2>", unsafe_allow_html=True)
+            for vid in video_files:
+                st.video(vid)
+                st.write("----")
+        else:
+            st.warning("No videos found in the repository root.")
+
+        # ---------------- FINAL GREETING ----------------
+        st.markdown("""
+<h1 style='text-align:center; color:red; margin-top:40px;'>
+\U0001F54C Allah Hafiz\U0001F54C
+</h1>
+""", unsafe_allow_html=True)
+            
