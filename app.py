@@ -34,7 +34,7 @@ if name:
         May laughter, joy, and positivity surround you every day. 🎈<br>
         May you grow in strength, kindness, and courage, and may your heart always remain pure. ❤️<br><br>
 
-        🎉 <b>Urdu Wishes</b> 🎉<br>
+        <b>Urdu Wishes</b><br>
         مولوی جی، آپ کی زندگی خوشیوں سے بھرپور ہو، ہر دن کامیابی اور سکون کے ساتھ آئے۔ 🌙<br>
         اللہ آپ کی محنت کو کامیابی میں بدل دے، اور آپ کے ہر خواب کو حقیقت میں تبدیل کرے۔ 💫<br>
         آپ کے دوست اور خاندان ہمیشہ آپ کے ساتھ خوش رہیں، اور ہر لمحہ آپ کے لیے محبت اور خوشی لے کر آئے۔ ❤️<br>
