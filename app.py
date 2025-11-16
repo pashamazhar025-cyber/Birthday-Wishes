@@ -78,4 +78,4 @@ if name:
     <h1 style='text-align:center; color:red; margin-top:40px;'>
     ❤️ MOLVI G, LOVE YOU ❤️
     </h1>
-    """, unsafe_allow_html=True))
+    """, unsafe_allow_html=True)
