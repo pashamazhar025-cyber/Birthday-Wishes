@@ -13,8 +13,6 @@ st.markdown(
 name = st.text_input("Enter your name:")
 
 if name:
-    # ---------------- SHOW MEMORIES BUTTON ----------------
-    if st.button("Press to See Your Memories"):
         # ---------------- COUNTDOWN ----------------
         for i in range(3, 0, -1):
             st.write(f"Starting in {i}…")
@@ -27,7 +25,7 @@ if name:
 
 \U0001F389 Today is a very special day — it’s your 18th Birthday, Molvi G! \U0001F389<br><br>
 
-Molvi G, may this year bring you endless happiness, success, and unforgettable memories. \U0001F496<br>
+May this year bring you endless happiness, success, and unforgettable memories. \U0001F496<br>
 May you always stay strong, cheerful, and full of love for everyone around you. \U0001F31F<br>
 May every step you take in life be guided by wisdom and may you achieve all your dreams.<br>
 May laughter, joy, and positivity surround you every day. \U0001F388<br>
@@ -46,7 +44,8 @@ May you grow in strength, kindness, and courage, and may your heart always remai
 
 </div>
 """, unsafe_allow_html=True)
-
+         # ---------------- SHOW MEMORIES BUTTON ----------------
+    if st.button("Press to See Your Memories"):
         # ---------- DISPLAY ALL IMAGES IN ROOT ----------
         image_files = [f for f in os.listdir('.') if f.lower().endswith((".jpg", ".jpeg", ".png", ".gif"))]
         if image_files:
