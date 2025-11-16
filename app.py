@@ -3,23 +3,40 @@ import streamlit as st
 import os
 import time
 
-# ---------------- APP TITLE ----------------
+# ---------------- APP CONFIG ----------------
 st.set_page_config(page_title="Birthday App", layout="centered")
-st.markdown(
-    "<h1 style='text-align:center; color:#ff1493;'>\U0001F389 Welcome Dear \U0001F389</h1>",
-    unsafe_allow_html=True
-)
+
+# ---------------- BACKGROUND GIF AFTER COUNTDOWN ----------------
+def show_background_gif():
+    st.markdown(
+        """
+        <style>
+        .stApp {
+            background-image: url('https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
 # ---------------- ENTER NAME ----------------
 name = st.text_input("Enter your name:")
 
 if name:
     # ---------------- COUNTDOWN ----------------
+    countdown_placeholder = st.empty()
     for i in range(3, 0, -1):
-        st.write(f"Starting in {i}…")
+        countdown_placeholder.markdown(f"<h2 style='text-align:center; color:#FF4500;'>Starting in {i}...</h2>", unsafe_allow_html=True)
         time.sleep(1)
-        st.empty()
-    # ---------------- BOLD COLORFUL HAPPY BIRTHDAY ----------------
+    countdown_placeholder.empty()  # remove countdown
+
+    # ---------------- PARTY GIF + HAPPY BIRTHDAY ----------------
+    show_background_gif()
+    st.balloons()
     st.markdown(f"""
     <h1 style='text-align:center; color:#FF4500; font-size:60px; font-weight:bold; 
                font-family: "Comic Sans MS", cursive, sans-serif; text-shadow: 2px 2px #FFD700;'>
@@ -27,10 +44,11 @@ if name:
     </h1>
     <br>
     """, unsafe_allow_html=True)
-    
-    # ---------------- BIRTHDAY MESSAGE ----------------
-    st.markdown("""
-<div style='font-size:20px; text-align:center; margin-top:20px;'>
+
+    # ---------------- BUTTON TO SHOW WISHES ----------------
+    if st.button("🎁 See Your Wishes"):
+        st.markdown(f"""
+<div style='text-align:center; font-size:20px;'>
 
 \U0001F389 Today is a very special day — it’s your 18th Birthday, Molvi G! \U0001F389<br><br>
 
@@ -49,14 +67,14 @@ May you grow in strength, kindness, and courage, and may your heart always remai
 مولوی جی، اللہ آپ کو علم کی روشنی، دل کی سکونت اور ہر دعا کی قبولیت دے۔<br><br>
 
 چھوٹی سی شاعری<br>
-ہر دن آپ کے چہرے پر مسکان ہو، اور دل میں خوشی کے پھول کھلیں۔<br><br>
+ہر دن آپ کے چہرے پر مسکان ہو، اور دل میں خوشی کے پھول کھلیں۔ \U0001F338<br><br>
 
 </div>
 """, unsafe_allow_html=True)
 
-    # ---------------- SHOW MEMORIES BUTTON ----------------
-    if st.button("Press to See Your Memories"):
-        # ---------- DISPLAY ALL IMAGES IN ROOT ----------
+    # ---------------- BUTTON TO SHOW MEMORIES ----------------
+    if st.button("📸 See Your Memories"):
+        # ---------- DISPLAY IMAGES ----------
         image_files = [f for f in os.listdir('.') if f.lower().endswith((".jpg", ".jpeg", ".png", ".gif"))]
         if image_files:
             st.markdown("<h2 style='text-align:center; color:blue;'>Your Pictures</h2>", unsafe_allow_html=True)
@@ -66,7 +84,7 @@ May you grow in strength, kindness, and courage, and may your heart always remai
         else:
             st.warning("No images found in the repository root.")
 
-        # ---------- DISPLAY ALL VIDEOS IN ROOT ----------
+        # ---------- DISPLAY VIDEOS ----------
         video_files = [f for f in os.listdir('.') if f.lower().endswith((".mp4", ".mov", ".mkv"))]
         if video_files:
             st.markdown("<h2 style='text-align:center; color:green;'>Your Videos</h2>", unsafe_allow_html=True)
@@ -76,9 +94,9 @@ May you grow in strength, kindness, and courage, and may your heart always remai
         else:
             st.warning("No videos found in the repository root.")
 
-        # ---------------- FINAL GREETING MESSAGE ----------------
+        # ---------------- FINAL GREETING ----------------
         st.markdown("""
 <h1 style='text-align:center; color:red; margin-top:40px;'>
-\U0001F54C Love You G \U0001F54C
+\U0001F54C Love You Molvi G \U0001F54C
 </h1>
 """, unsafe_allow_html=True)
