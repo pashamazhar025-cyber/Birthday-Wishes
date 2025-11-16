@@ -10,6 +10,16 @@ st.set_page_config(page_title="Birthday App", layout="centered")
 name = st.text_input("Enter your name:")
 
 if name:
+    # ---------------- WELCOME MESSAGE ----------------
+    st.markdown(f"""
+    <h1 style='text-align:center; color:#FF1493; font-size:60px; font-weight:bold;
+               font-family: "Comic Sans MS", cursive, sans-serif; text-shadow: 3px 3px #FFD700;'>
+        Welcome, {name}!
+    </h1>
+    """, unsafe_allow_html=True)
+    
+    time.sleep(2)  # pause to show welcome
+
     # ---------------- COUNTDOWN ----------------
     countdown_placeholder = st.empty()
     for i in range(3, 0, -1):
@@ -17,16 +27,17 @@ if name:
         time.sleep(1)
     countdown_placeholder.empty()  # remove countdown
 
-    # ---------------- PARTY BACKGROUND ----------------
+    # ---------------- DARK PARTY BACKGROUND ----------------
     st.markdown(
         """
         <style>
         .stApp {
-            background-image: url('https://media.giphy.com/media/l0ExncehJzexFpRHq/giphy.gif'); /* Party animation */
+            background-image: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
+            color: white;
         }
         </style>
         """,
@@ -36,21 +47,10 @@ if name:
     # ---------------- BALLOONS ----------------
     st.balloons()
 
-    # ---------------- FIREWORKS OVERLAY ----------------
-    st.markdown(
-        """
-        <div style='position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none;'>
-            <img src='https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif' 
-            style='width:100%; height:100%; object-fit:cover;'/>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-
     # ---------------- HAPPY BIRTHDAY MESSAGE ----------------
     st.markdown(f"""
-    <h1 style='text-align:center; color:#FF4500; font-size:60px; font-weight:bold; 
-               font-family: "Comic Sans MS", cursive, sans-serif; text-shadow: 2px 2px #FFD700;'>
+    <h1 style='text-align:center; color:#FFD700; font-size:60px; font-weight:bold; 
+               font-family: "Comic Sans MS", cursive, sans-serif; text-shadow: 2px 2px #FF4500;'>
         Happy Birthday {name}!
     </h1>
     <br>
@@ -88,7 +88,7 @@ May you grow in strength, kindness, and courage, and may your heart always remai
         # ---------- DISPLAY IMAGES ----------
         image_files = [f for f in os.listdir('.') if f.lower().endswith((".jpg", ".jpeg", ".png", ".gif"))]
         if image_files:
-            st.markdown("<h2 style='text-align:center; color:blue;'>Your Pictures</h2>", unsafe_allow_html=True)
+            st.markdown("<h2 style='text-align:center; color:cyan;'>Your Pictures</h2>", unsafe_allow_html=True)
             for img in image_files:
                 st.image(img, use_column_width=True)
                 st.write("----")
@@ -98,7 +98,7 @@ May you grow in strength, kindness, and courage, and may your heart always remai
         # ---------- DISPLAY VIDEOS ----------
         video_files = [f for f in os.listdir('.') if f.lower().endswith((".mp4", ".mov", ".mkv"))]
         if video_files:
-            st.markdown("<h2 style='text-align:center; color:green;'>Your Videos</h2>", unsafe_allow_html=True)
+            st.markdown("<h2 style='text-align:center; color:lightgreen;'>Your Videos</h2>", unsafe_allow_html=True)
             for vid in video_files:
                 st.video(vid)
                 st.write("----")
@@ -108,7 +108,8 @@ May you grow in strength, kindness, and courage, and may your heart always remai
         # ---------------- FINAL GREETING ----------------
         st.markdown("""
 <h1 style='text-align:center; color:red; margin-top:40px;'>
-\U0001F54C Allah Hafiz\U0001F54C
+\U0001F54C Murshid G, Assalam o Alaikum \U0001F54C
 </h1>
 """, unsafe_allow_html=True)
+            
         
